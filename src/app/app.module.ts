@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { LoadingModule } from 'ngx-loading';
 
 // routes
 import { app_routing } from './app.routes';
@@ -16,6 +17,7 @@ import { PeoplesComponent } from './components/peoples/peoples.component';
 import { HttpModule } from '../../node_modules/@angular/http';
 import { SearchPipe } from './pipe/search.pipe';
 import { PeopleComponent } from './components/people/people.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -25,13 +27,15 @@ import { PeopleComponent } from './components/people/people.component';
     AboutComponent,
     PeoplesComponent,
     SearchPipe,
-    PeopleComponent
+    PeopleComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     app_routing,
     HttpModule,
-    FormsModule
+    FormsModule,
+    LoadingModule
   ],
   providers: [
     PeoplesService

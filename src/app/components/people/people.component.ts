@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "../../../../node_modules/@angular/router";
 import { PeoplesService } from "../../services/peoples.service";
+import { HomeService } from '../../services/home.service';
 
 @Component({
   selector: "app-people",
@@ -12,7 +13,8 @@ export class PeopleComponent implements OnInit {
 
   constructor(
     private activateRoute: ActivatedRoute,
-    private peoplesService: PeoplesService
+    private peoplesService: PeoplesService,
+    private homeService: HomeService
   ) {}
 
   ngOnInit() {
@@ -22,5 +24,6 @@ export class PeopleComponent implements OnInit {
         this.people = data;
       });
     });
+    this.homeService.setActiveNav(true);
   }
 }
